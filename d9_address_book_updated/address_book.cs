@@ -8,9 +8,11 @@ namespace d9_address_book_updated
 {
     public interface SystemProcess
     {
-
+        //Add the address from input to dictionary
         void addAddress();
+        //edit the address
         void updateAddress();
+        //delete the address from dictionary
         void deleteAddress();
         void display();
 
@@ -18,7 +20,7 @@ namespace d9_address_book_updated
     }
     public class addressBookSystem
     {
-
+        //local variables
         public String firstName;
         public String lastName;
         public String address;
@@ -28,6 +30,7 @@ namespace d9_address_book_updated
         public String phoneNumber;
         public String email;
 
+        //constructor of class addressBookSystem
         public addressBookSystem(String firstName, String lastName, String address, String city, String state, String zip, String phoneNumber, String email)
         {
 
@@ -44,6 +47,7 @@ namespace d9_address_book_updated
 
 
     }
+    //Inherit interface SystemProcess in class address_book
     public class address_book : SystemProcess
     {
 
@@ -133,6 +137,8 @@ namespace d9_address_book_updated
             }
         }
 
+        //delete address from dictionary
+
         public void deleteAddress()
         {
             //throw new NotImplementedException();
@@ -171,6 +177,7 @@ namespace d9_address_book_updated
 
         }
     }
+    //missing added
 }
-    
+
 
