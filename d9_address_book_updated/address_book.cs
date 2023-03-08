@@ -57,13 +57,15 @@ namespace d9_address_book_updated
             String exit = "n";
             while (exit == "n")
             {
-                Console.Write("Enter your option for \n 1 Add address \n 2) Update Address ");
-                Console.WriteLine("Enter Your Option");
+                Console.Write("Enter your option for \n 1) Add address \n 2) Update Address \n 3) Delete Address");
+                Console.WriteLine("\n Total Details stored: " + addressDetailDict.Count + "\n");
+                Console.WriteLine("\n Enter Your Option");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
                     case 1: addAddress(); break;
                     case 2: updateAddress(); break;
+                    case 3: deleteAddress(); break;
 
                 }
 
@@ -95,7 +97,7 @@ namespace d9_address_book_updated
             email = Convert.ToString(Console.ReadLine());
             addressBookSystem adBook = new addressBookSystem(firstName, lastName, address, city, state, zip, phoneNumber, email);
             addressDetailDict.Add(firstName, adBook);
-            Console.WriteLine("Total Details stored: " + addressDetailDict.Count);
+
             // throw new NotImplementedException();
         }
 
@@ -133,13 +135,23 @@ namespace d9_address_book_updated
         public void deleteAddress()
         {
             //throw new NotImplementedException();
+            Console.WriteLine("Enter the firstname to delete");
+            String name = Convert.ToString(Console.ReadLine());
+            if (addressDetailDict.ContainsKey(name))
+            {
+                addressDetailDict.Remove(name);
+                Console.WriteLine("-------------Deleted Successfully ----------------");
+            }
+            else
+            {
+                Console.WriteLine("Name not found");
+            }
         }
 
         public void display()
         {
             // throw new NotImplementedException();
         }
-
 
 
     }
