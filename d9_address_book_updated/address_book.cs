@@ -57,12 +57,13 @@ namespace d9_address_book_updated
             String exit = "n";
             while (exit == "n")
             {
-                Console.Write("Enter your option for \n 1 Add address ");
+                Console.Write("Enter your option for \n 1 Add address \n 2) Update Address ");
                 Console.WriteLine("Enter Your Option");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
                     case 1: addAddress(); break;
+                    case 2: updateAddress(); break;
 
                 }
 
@@ -100,7 +101,33 @@ namespace d9_address_book_updated
 
         public void updateAddress()
         {
+            Console.WriteLine("Enter the firstname to update field");
+            String name = Convert.ToString(Console.ReadLine());
+            if (addressDetailDict.ContainsKey(name))
+            {
+                Console.WriteLine("ENter First Name");
+                addressDetailDict[name].firstName = Convert.ToString(Console.ReadLine());
+                Console.WriteLine("ENter last Name");
+                addressDetailDict[name].lastName = Convert.ToString(Console.ReadLine());
+                Console.WriteLine("ENter address ");
+                addressDetailDict[name].address = Convert.ToString(Console.ReadLine());
+                Console.WriteLine("ENter city");
+                addressDetailDict[name].city = Convert.ToString(Console.ReadLine());
+                Console.WriteLine("ENter state");
+                addressDetailDict[name].state = Convert.ToString(Console.ReadLine());
+                Console.WriteLine("ENter zip");
+                addressDetailDict[name].zip = Convert.ToString(Console.ReadLine());
+                Console.WriteLine("ENter phone number");
+                addressDetailDict[name].phoneNumber = Convert.ToString(Console.ReadLine());
+                Console.WriteLine("ENter email");
+                addressDetailDict[name].email = Convert.ToString(Console.ReadLine());
+            }
+            else
+            {
 
+                Console.WriteLine("No key with name " + name + " found");
+
+            }
         }
 
         public void deleteAddress()
@@ -112,6 +139,7 @@ namespace d9_address_book_updated
         {
             // throw new NotImplementedException();
         }
+
 
 
     }
