@@ -72,6 +72,7 @@ namespace d9_address_book_updated
 
         }
 
+        //Add Address Book
         public void addAddress()
         {
             String firstName, lastName, address, city, state, zip, phoneNumber, email;
@@ -97,6 +98,11 @@ namespace d9_address_book_updated
             // throw new NotImplementedException();
         }
 
+        public void updateAddress()
+        {
+
+        }
+
         public void deleteAddress()
         {
             //throw new NotImplementedException();
@@ -107,9 +113,6 @@ namespace d9_address_book_updated
             // throw new NotImplementedException();
         }
 
-        public void updateAddress()
-        {
-            // throw new NotImplementedException();
-        }
+
     }
 }
