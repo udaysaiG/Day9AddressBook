@@ -57,7 +57,7 @@ namespace d9_address_book_updated
             String exit = "n";
             while (exit == "n")
             {
-                Console.Write("Enter your option for \n 1) Add address \n 2) Update Address \n 3) Delete Address");
+                Console.Write("Enter your option for \n 1) Add address \n 2) Update Address \n 3) Delete Address \n 4)Display All");
                 Console.WriteLine("\n Total Details stored: " + addressDetailDict.Count + "\n");
                 Console.WriteLine("\n Enter Your Option");
                 int option = Convert.ToInt32(Console.ReadLine());
@@ -66,6 +66,7 @@ namespace d9_address_book_updated
                     case 1: addAddress(); break;
                     case 2: updateAddress(); break;
                     case 3: deleteAddress(); break;
+                    case 4: display(); break;
 
                 }
 
@@ -147,12 +148,29 @@ namespace d9_address_book_updated
                 Console.WriteLine("Name not found");
             }
         }
-
+        //To display the details stored in Dictionary
         public void display()
         {
             // throw new NotImplementedException();
+            foreach (KeyValuePair<String, addressBookSystem> adb in addressDetailDict)
+            {
+                Console.WriteLine("--------------------------------");
+                Console.WriteLine(adb.Key);
+                Console.WriteLine("---------");
+                addressBookSystem adbsys = adb.Value;
+                Console.WriteLine("First Name: " + adbsys.firstName);
+                Console.WriteLine("Last Name: " + adbsys.lastName);
+                Console.WriteLine("city: " + adbsys.city);
+                Console.WriteLine("state: " + adbsys.state);
+                Console.WriteLine("Zip: " + adbsys.zip);
+                Console.WriteLine("phoneNumber: " + adbsys.phoneNumber);
+                Console.WriteLine("email: " + adbsys.email);
+
+            }
+
+
         }
-
-
     }
 }
+    
+
